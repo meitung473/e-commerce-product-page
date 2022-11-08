@@ -1,4 +1,3 @@
-import { Variants } from "framer-motion";
 import { theme } from "../style/theme";
 import { animationVariants } from "../types/animation";
 

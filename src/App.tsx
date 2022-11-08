@@ -29,7 +29,6 @@ export default function App() {
     const { toggle: carouselModal, handleToggle: handleCarouselModal } =
         useToggle(false);
 
-    // product amount
     const isMd = useMediaQuery(br.md);
 
     const [cursorText, setCursorText] = useState<string>("");
