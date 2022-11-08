@@ -1,5 +1,5 @@
 import { motion, LayoutGroup, AnimatePresence } from "framer-motion";
-
+// styled , component
 import {
     Wrapper,
     Header,
@@ -9,17 +9,19 @@ import {
     ThumbnailBox,
     CloseContainer,
 } from "./style";
-
-import { showImageVariants } from "./animate";
-import { swipeConfidenceThreshold, swipePower } from "../../utils/swipPower";
-
-import { useMediaQuery } from "../../hooks/useMediaqurey";
-import { br } from "../../utils/Device";
-import { ModalProp } from "../OverlayComponent/type";
-import { ICursorMethod, withModal } from "../../types/global";
 import Buttons from "./Buttons";
 import CloseIcon from "./Close";
+import { showImageVariants } from "./animate";
+// utils
+import { swipeConfidenceThreshold, swipePower } from "../../utils/swipPower";
+import { br } from "../../utils/Device";
+import { defaultScaleAnimationVariant } from "../../utils/animateVaraints";
+// hooks
+import { useMediaQuery } from "../../hooks/useMediaqurey";
 import { useCarousel } from "../../context/CarouselContextPackage";
+// types
+import { ModalProp } from "../OverlayComponent/type";
+import { ICursorMethod, withModal } from "../../types/global";
 
 interface ICarouselProp
     extends ICursorMethod,
@@ -27,7 +29,6 @@ interface ICarouselProp
         Pick<ModalProp, "handleModal"> {}
 
 const carouselPicsId = [1, 2, 3, 4];
-
 function Carousel({
     $isModal,
     handleModal,
@@ -43,15 +44,10 @@ function Carousel({
 
     return (
         <Wrapper
-            initial={{
-                scale: 0,
-            }}
-            animate={{
-                scale: 1,
-            }}
-            exit={{
-                scale: 0,
-            }}
+            variants={defaultScaleAnimationVariant}
+            initial="hidden"
+            animate="show"
+            exit="exit"
         >
             {/* desktop modal show close button */}
             {isMd && $isModal && (

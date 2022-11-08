@@ -86,6 +86,16 @@ export default function App() {
                         </Content>
                     </Main>
                 </Container>
+                <div className="attribution">
+                    Challenge by{" "}
+                    <a
+                        href="https://www.frontendmentor.io?ref=challenge"
+                        target="_blank"
+                    >
+                        Frontend Mentor
+                    </a>
+                    . Coded by <a href="https://blog.rosa.tw">Rosa</a>.
+                </div>
             </CartProvider>
         </ThemeProvider>
     );
